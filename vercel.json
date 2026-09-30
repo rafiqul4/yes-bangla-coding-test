@@ -1,11 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/index.php", "use": "vercel-php@0.7.3" },
-    { "src": "index.html", "use": "@vercel/static" }
+    { "src": "api/index.php", "use": "vercel-php@0.7.3" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.php" },
+    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ],
   "env": { "APP_ENV": "production", "APP_DEBUG": "false" }
