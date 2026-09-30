@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Customer;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Vendor;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +14,17 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create(['name' => 'Admin Morgan', 'email' => 'admin@northstar.test', 'password' => 'password', 'role' => 'admin']);
         User::factory()->create(['name' => 'Staff Taylor', 'email' => 'staff@northstar.test', 'password' => 'password', 'role' => 'staff']);
+        User::factory()->create(['name' => 'Vendor Riley', 'email' => 'vendor@northstar.test', 'password' => 'password', 'role' => 'vendor']);
         Customer::insert([
             ['name' => 'Maya Chen', 'phone' => '+1 415 555 0192', 'email' => 'maya.chen@example.com', 'address' => 'San Francisco, CA', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Jon Bell', 'phone' => '+1 212 555 0181', 'email' => 'jon.bell@example.com', 'address' => 'Brooklyn, NY', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Elena Rossi', 'phone' => '+39 02 555 0118', 'email' => 'elena.rossi@example.com', 'address' => 'Milan, Italy', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Samir Patel', 'phone' => '+44 20 5550 1452', 'email' => 'samir.patel@example.com', 'address' => 'London, UK', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+        Vendor::insert([
+            ['name' => 'Atlas Outdoor Co.', 'contact' => 'Rina Das', 'email' => 'rina@atlasoutdoor.example', 'category' => 'Footwear', 'rating' => 4.9, 'status' => 'Active', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Morrow Goods', 'contact' => 'Theo Grant', 'email' => 'theo@morrowgoods.example', 'category' => 'Accessories', 'rating' => 4.7, 'status' => 'Active', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Forma Studio', 'contact' => 'Lena Ortiz', 'email' => 'lena@formastudio.example', 'category' => 'Lifestyle', 'rating' => 4.2, 'status' => 'Review', 'created_at' => now(), 'updated_at' => now()],
         ]);
         Product::insert([
             ['name' => 'AeroFlex Running Shoes', 'sku' => 'AF-RUN-042', 'category' => 'Footwear', 'price' => 129, 'stock_quantity' => 8, 'status' => 'Active', 'created_at' => now(), 'updated_at' => now()],

@@ -5,13 +5,14 @@ Northstar is a polished, responsive order-management frontend and Laravel 11 API
 ## Included workflow
 
 - Admin and Staff demo login states with role-aware product deletion.
+- Vendor dashboard with partner CRUD, rating/status tracking, and vendor demo login.
 - Dashboard metrics for customers, products, orders, sales, and low stock.
 - Searchable product, customer, and order tables.
 - Multi-item order creation with live totals, stock limits, stock deduction, and success/error feedback.
 - Local persistence through `localStorage`, so a placed order survives a refresh.
 - Responsive layout for desktop and mobile.
 
-Demo accounts: `admin@northstar.test` / `password` and `staff@northstar.test` / `password`.
+Demo accounts: `admin@northstar.test` / `password`, `staff@northstar.test` / `password`, and `vendor@northstar.test` / `password`.
 
 ## Laravel API contract
 
@@ -24,6 +25,8 @@ The UI is intentionally decoupled from the backend boundary. Replace the local s
 | GET/PATCH/DELETE | `/api/products/{product}` | Admin for delete |
 | GET/POST | `/api/customers` | Authenticated |
 | GET/PATCH/DELETE | `/api/customers/{customer}` | Admin for delete |
+| GET/POST | `/api/vendors` | Admin |
+| GET/PATCH/DELETE | `/api/vendors/{vendor}` | Admin |
 | GET/POST | `/api/orders` | Admin or Staff |
 | GET | `/api/dashboard` | Authenticated |
 
